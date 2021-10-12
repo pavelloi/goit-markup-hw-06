@@ -1,5 +1,6 @@
 :root {
   --accent-color: #2196f3;
+  --touch-accent-color: #188ce8;
   --primary-title-text: #212121;
   --primary-text-color: #757575;
   --secondary-title-text: #ffffff;
@@ -253,7 +254,7 @@ body {
   left: 50%;
   transform: translate(-50%, -50%) scale(1);
   min-width: 528px;
-  min-height: 581px;
+  padding: 40px 39px 40px 41px;
   background-color: var(--secondary-title-text);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
@@ -263,6 +264,8 @@ body {
 
 .modal-close-btn {
   position: absolute;
+  width: 30px;
+  height: 30px;
   top: 8px;
   right: 8px;
   margin: 0;
@@ -270,6 +273,9 @@ body {
   border: none;
   background-color: var(--secondary-title-text);
   cursor: pointer;
+  transition-property: fill;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-close-btn:hover,
@@ -278,7 +284,6 @@ body {
 }
 
 .modal-title {
-  padding: 40px 40px 0 40px;
   margin-bottom: 12px;
   font-weight: 700;
   font-size: 20px;
@@ -305,12 +310,15 @@ body {
   width: 100%;
   height: 40px;
   margin: 0;
-  padding: 12px 16px;
+  padding: 12px 42px;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
   font-size: 12px;
   line-height: 1.16;
   letter-spacing: 0.01em;
+  transition-property: border;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .textarea {
@@ -338,17 +346,26 @@ body {
   font-size: 12px;
   line-height: 1.16;
   letter-spacing: 0.01em;
+  transition-property: border;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-form textarea::placeholder {
-  font-size: 12px;
-  line-height: 1.16;
+  font-size: 14px;
+  line-height: 1.14;
   letter-spacing: 0.01em;
   color: rgba(117, 117, 117, 0.5);
 }
 .checkbox-field {
   margin-bottom: 30px;
 }
+.checkbox-field {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .checkbox-field label {
   font-size: 14px;
   line-height: 1.71;
@@ -358,7 +375,24 @@ body {
 .policy-link {
   color: var(--accent-color);
 }
+.checkbox {
+  appearance: none;
+}
+.checkbox-icon {
+  display: inline-block;
+  width: 16px;
+  height: 15px;
+  margin-right: 7px;
+  border: 2px solid var(--primary-title-text);
+  border-radius: 2px;
+}
 
+.checkbox:checked + .checkbox-icon {
+  border-color: var(--accent-color);
+  background-image: url(../images/icon-check.svg);
+  background-size: contain;
+  background-origin: border-box;
+}
 .send-btn {
   justify-content: center;
   min-width: 200px;
@@ -376,12 +410,32 @@ body {
   border-radius: 4px;
 }
 
+.send-btn:focus,
+.send-btn:hover {
+  background-color: var(--touch-accent-color);
+}
+
 .form-field input:focus,
 .textarea textarea:focus,
 .form-field input:hover,
 .textarea textarea:hover {
-  /* color: var(--accent-color); */
   border: 1px solid var(--accent-color);
+}
+
+.form-icons {
+  position: absolute;
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  transform: translate(12px, 29px);
+  transition-property: fill;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-field input:focus ~ .form-icons,
+.form-field input:hover ~ .form-icons {
+  fill: var(--accent-color);
 }
 /* advantages */
 
