@@ -36,7 +36,8 @@ body {
   background-color: var(--secondary-title-text);
   color: var(--primary-text-color);
 }
-.visually-hidden {
+.visually-hidden,
+.checkbox {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -374,9 +375,6 @@ body {
 }
 .policy-link {
   color: var(--accent-color);
-}
-.checkbox {
-  appearance: none;
 }
 .checkbox-icon {
   display: inline-block;
