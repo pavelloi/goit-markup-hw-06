@@ -741,7 +741,7 @@ body {
 .footer-soc {
   align-items: baseline;
   text-align: left;
-  margin-right: 93px;
+  margin-right: auto;
 }
 .footer-strong {
   display: block;
