@@ -36,8 +36,7 @@ body {
   background-color: var(--secondary-title-text);
   color: var(--primary-text-color);
 }
-.visually-hidden,
-.checkbox {
+.visually-hidden {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -230,6 +229,7 @@ body {
 }
 
 .backdrop {
+  z-index: 2;
   position: fixed;
   top: 0;
   left: 0;
@@ -285,7 +285,6 @@ body {
 }
 
 .modal-title {
-  margin-bottom: 12px;
   font-weight: 700;
   font-size: 20px;
   line-height: 1.15;
@@ -295,7 +294,7 @@ body {
 }
 
 .modal-form {
-  width: 448px;
+  margin-top: 12px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -326,6 +325,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  margin-bottom: 20px;
 }
 .form-field label,
 .textarea label {
@@ -339,7 +339,6 @@ body {
 .textarea textarea {
   width: 100%;
   height: 120px;
-  margin-bottom: 20px;
   padding: 12px 16px;
   resize: none;
   border: 1px solid rgba(33, 33, 33, 0.2);
@@ -358,20 +357,32 @@ body {
   letter-spacing: 0.01em;
   color: rgba(117, 117, 117, 0.5);
 }
+
+.checkbox {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  clip: rect(0 0 0 0);
+}
+
 .checkbox-field {
   margin-bottom: 30px;
-}
-.checkbox-field {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .checkbox-field label {
+  display: flex;
   font-size: 14px;
   line-height: 1.71;
   letter-spacing: 0.03em;
   color: var(--primary-text-color);
+  align-items: center;
 }
 .policy-link {
   color: var(--accent-color);
@@ -383,6 +394,12 @@ body {
   margin-right: 7px;
   border: 2px solid var(--primary-title-text);
   border-radius: 2px;
+  cursor: pointer;
+}
+
+.checkbox-icon:hover,
+.checkbox:focus + .checkbox-icon {
+  border-color: var(--accent-color);
 }
 
 .checkbox:checked + .checkbox-icon {
@@ -404,13 +421,16 @@ body {
   color: var(--secondary-title-text);
   cursor: pointer;
   border: none;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
+  transition-property: box-shadow, background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .send-btn:focus,
 .send-btn:hover {
   background-color: var(--touch-accent-color);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
 
 .form-field input:focus,
@@ -506,6 +526,7 @@ body {
 
 .work-thumb {
   position: relative;
+  z-index: 1;
 }
 .work-item {
   flex-basis: calc(100% / 3 - 30px);

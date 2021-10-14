@@ -54,7 +54,7 @@
                             <use href="./images/close.svg#icon-close"></use>
                         </svg>
                     </button>
-                    <h2 class="modal-title">Оставьте свои данные, мы вам перезвоним</h2>
+                    <strong class="modal-title">Оставьте свои данные, мы вам перезвоним</strong>
                     <form class="modal-form" autocomplete="off">
                         <div class="form-field">
                             <label for="name">Имя</label>
@@ -81,11 +81,13 @@
                             <label for="comment">Комментарий</label>
                             <textarea name="comment" id="comment" placeholder="Введите текст"></textarea>
                         </div>
-                        <p class="checkbox-field">
+                        <div class="checkbox-field">
+                            <label for="policy">
                             <input class="checkbox" type="checkbox" name="policy" id="policy">
                             <span class="checkbox-icon"></span>
-                            <label for="policy">Соглашаюсь с рассылкой и принимаю <a class="policy-link" href="">Условия договора</a></label>
-                        </p>
+                            Соглашаюсь с рассылкой и принимаю&nbsp;
+                            <a class="policy-link" href="">Условия договора</a></label>
+                        </div>
                         <button class="send-btn" type="submit">Отправить</button>
                     </form>
                 </div>
