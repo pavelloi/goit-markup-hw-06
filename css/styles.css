@@ -807,6 +807,14 @@ body {
   font-size: 16px;
   line-height: 1.25;
   letter-spacing: 0.03em;
+  transition-property: border;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.input:hover,
+.input:focus {
+  border: 1px solid var(--accent-color);
 }
 
 .email-form input::placeholder {
